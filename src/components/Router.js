@@ -9,7 +9,7 @@ import Navigation from "./Navigation";
 인증 : <Auth />
 */
 
-const AppRouter = ({isLoggedIn}) => {
+const AppRouter = ({isLoggedIn, userObj}) => {
     return (
         <Router>
             {isLoggedIn && <Navigation />}
@@ -17,7 +17,7 @@ const AppRouter = ({isLoggedIn}) => {
                 {isLoggedIn ? (
                     <>
                         <Route exact path="/">
-                            <Home />
+                            <Home userObj={userObj} />
                         </Route> 
                         <Route exact path="/profile">
                             <Profile />
