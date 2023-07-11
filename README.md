@@ -92,3 +92,28 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 
     //사진 첨부 없이 텍스트만 트윗하고 싶을 때도 있으므로 기본 값을 ""로 해야한다.
     //트윗할 때 텍스트만 입력시 이미지 url ""로 비워두기 위함
+
+* query 기본 작성방법
+    import { collection, getDocs, query, where, orderBy } from "@firebase/firestore";
+    const getMyNweets = async () => {
+        const q = query(collection(dbService, "nweets"), where("creatorId", "==", userObj.uid), orderBy("createdAt", "asc"));
+        //메서드로 쿼리 결과 값 가져오기
+        const querySnapshot = await getDocs(q);
+        console.log( querySnapshot.docs.map((doc) => doc.data()));
+    }
+
+* updateCurrentUser - user의 name을 수정하였을 경우 실시간으로 다른 곳도 변경 가능하게 함
+    import { updateCurrentUser } from "firebase/auth";
+    await updateCurrentUser(authService, authService.currentUser);
+
+
+* css
+    참조 - https://www.daleseo.com/react-font-awesome/
+    Font Awesome의 SVG 기반 아이콘을 활성화 시키기 위한 기본 패키지 설치
+        npm i @fortawesome/fontawesome-svg-core
+
+    무료로 제공되는 Solid, Regular Brands 3개의 카테고리에 대한 패키지 설치
+        npm i @fortawesome/free-solid-svg-icons @fortawesome/free-regular-svg-icons @fortawesome/free-brands-svg-icons
+
+    Font Awesome을 React 컴포넌트 형태로 사용할 수 있도록 해주는 @fortawesome/react-fontawesome 이라는 패키지는 설치
+        npm i @fortawesome/react-fontawesome
