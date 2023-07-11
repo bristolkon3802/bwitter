@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/bwitter/static/css/main.ff37f1a6.css",
+    "main.js": "/bwitter/static/js/main.52ad3ea3.js",
+    "index.html": "/bwitter/index.html",
+    "main.ff37f1a6.css.map": "/bwitter/static/css/main.ff37f1a6.css.map",
+    "main.52ad3ea3.js.map": "/bwitter/static/js/main.52ad3ea3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ff37f1a6.css",
+    "static/js/main.52ad3ea3.js"
+  ]
+}
